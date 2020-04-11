@@ -1,0 +1,55 @@
+<h2 class="text-center mt-2 mb-4">Cheeses List</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">#</th>
+      <th scope="col" class="text-center">Title</th>
+      <th scope="col" class="text-center">Price</th>
+      <th scope="col" class="text-center">Description</th>
+      <th scope="col" class="text-center">Created</th>
+      <th scope="col" class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cheese of cheeses; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{cheese.title}}</td>
+      <td>{{cheese.price}}</td>
+      <td>{{cheese.shortDescription}}</td>
+      <td>{{cheese.createdAtAgo}}</td>
+      <td>
+        <button class="btn btn-info mr-1">View</button>
+        <button class="btn btn-warning mr-1">Edit</button>
+        <button class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+// TODO  externaliser composant
+==== {{firstPage}} / {{lastPage}}
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item">
+      <span class="page-link" (click)="getPreviousPage()">Previous</span>
+    </li>
+
+    <li class="page-item disabled">
+      <span class="page-link">{{ currentPage }}</span>
+    </li>
+
+    <li class="page-item">
+      <span class="page-link" (click)="getNextPage()">Next</span>
+    </li>
+    <li class="page-item">
+      <span class="page-link" (click)="getFirstPage()">Console FirstPage</span>
+    </li>
+    <li class="page-item">
+      <span class="page-link" (click)="getLastPage()">Console LastPage</span>
+    </li>
+  </ul>
+</nav>
